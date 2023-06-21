@@ -65,6 +65,11 @@ class Tamagotchi {
             this.full--;
         }
     }
+
+    badGuardian() {
+        this.energy < 1 || this.mood < 1 || this.full < 1 ? this.rehomed = true : null
+        this.rehomed ? console.log('Your tamagotchi has been rehomed.') : null
+    }
 }
 
 const hercules = new Tamagotchi('Hercules');
@@ -76,6 +81,7 @@ hercules.medicate();
 hercules.play();
 hercules.sleep();
 hercules.timePasses();
+hercules.badGuardian();
 
 // Do not edit below this line
 module.exports = Tamagotchi;
