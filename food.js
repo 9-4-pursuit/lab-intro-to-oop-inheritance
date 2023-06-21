@@ -6,6 +6,10 @@ class Food {
     this.fresh = daysToSpoil > 0 ? true : false;
   }
 
+  updateFreshnessToFalse() {
+    this.fresh = false;
+  }
+
   prepare() {
     console.log(`${this.name} is being prepared`);
   }
@@ -20,10 +24,6 @@ class Food {
     }
   }
 
-  updateFreshnessToFalse() {
-    this.fresh = false;
-  }
-
   aDayPasses() {
     this.daysToSpoil--;
     if (this.daysToSpoil <= 0) this.updateFreshnessToFalse();
@@ -31,5 +31,15 @@ class Food {
   }
 }
 
+class BadFood extends Food {
+  constructor(name, daysToSpoil = 20, fresh = (daysToSpoil > 0 ? true : false), weapons = []) {
+    super(name, daysToSpoil, fresh);
+    this.weapons = weapons;
+  }
+}
+
 // Do not edit below this line
-module.exports = Food;
+module.exports = {
+  Food,
+  BadFood
+};
