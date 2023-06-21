@@ -32,18 +32,34 @@ class Food {
 }
 
 class BadFood extends Food {
-  constructor(name, daysToSpoil = 20, fresh = (daysToSpoil > 0 ? true : false), weapons = []) {
+  constructor(name, weapons = [], daysToSpoil = 20, fresh) {
     super(name, daysToSpoil, fresh);
     this.weapons = weapons;
   }
 
+  updateDaysToSpoil(daysToSpoil) {
+    this.daysToSpoil = daysToSpoil;
+  }
+
   prepare() {
-    console.log(`I am ${this.name} and my calories are too high to count!` || `I am ${this.name} and you are just a passing trend!`);
+    const taunts = [
+      `I am ${this.name} and my calories are too high to count!`,
+      `I am ${this.name} and you are just a passing trend!`
+    ];
+
+    console.log(taunts[Math.floor(Math.random() * taunts.length)]);
+  }
+
+  fight(enemy){
+    const attack = this.weapons[Math.floor(Math.random() * this.weapons.length)];
+    this.updateDaysToSpoil(enemy.daysToSpoil - attack.hitPoints);
+
+    console.log(`
+      ${this.name} used ${attack.name} attack against ${enemy.name}.
+      ${enemy.name} is down ${enemy.daysToSpoil}, but ${this.name} is still up ${this.daysToSpoil}!
+    `);
   }
 }
 
 // Do not edit below this line
-module.exports = {
-  Food,
-  BadFood
-};
+module.exports = Food;

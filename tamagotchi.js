@@ -96,7 +96,7 @@ class Tamagotchi {
   badGuardian() {
     if (this.energy <= 0 || this.mood <= 0 || this.full <= 0) {
       this.updateRehomed(true);
-      console.log("Your Tamagotchi got rehomed");
+      console.log(`Your Tamagotchi ${this.name} has been rehomed.`);
     }
   }
 }
