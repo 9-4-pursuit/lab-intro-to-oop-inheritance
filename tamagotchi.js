@@ -9,10 +9,15 @@ class Tamagotchi {
     this.rehomed = rehomed;
   }
 
+  greet(){
+    console.log(`Hello, I'm ${this.name}!`);
+  }
+
+
 }
 
 let tomo = new Tamagotchi("tomo");
 
-console.log(tomo)
+tomo.greet()
 // Do not edit below this line
 module.exports = Tamagotchi;
