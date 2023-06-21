@@ -41,6 +41,12 @@ class Tamagotchi {
       I am ${this.sick ? "sick" : "not sick"}
     `);
   }
+
+  eat() {
+    this.updateFull(this.full + 2);
+    this.updateEnergy(this.energy - 1);
+    if (this.full > 10) this.updateSick(true);
+  }
 }
 
 // Do not edit below this line
