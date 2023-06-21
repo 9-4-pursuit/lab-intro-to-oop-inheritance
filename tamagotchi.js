@@ -9,6 +9,26 @@ class Tamagotchi {
     this.rehomed = rehomed;
   }
 
+  updateEnergy(newEnergy) {
+    this.energy = newEnergy;
+  }
+
+  updateFull(newFull) {
+    this.full = newFull;
+  }
+
+  updateMood(newMood) {
+    this.mood = newMood;
+  }
+
+  updateSick(newSick) {
+    this.sick = newSick;
+  }
+
+  updateRehomed(newRehomed) {
+    this.rehomed = newRehomed;
+  }
+
   greet() {
     console.log(`Hello, I'm ${this.name}!`);
   }
