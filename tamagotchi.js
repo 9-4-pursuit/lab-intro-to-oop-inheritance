@@ -18,11 +18,18 @@ class Tamagotchi {
         console.log(`My mood is: ${this.mood}\nI am this full: ${this.full}\nMy energy is: ${this.energy}`);
         this.sick ? console.log('I am sick') : console.log('I am not sick');
     }
+
+    eat() {
+        this.energy--;
+        this.full += 2;
+        this.full > 10 ? this.sick = true : null;
+    }
 }
 
 const hercules = new Tamagotchi('Hercules');
 
-hercules.status()
+hercules.greet();
+hercules.status();
 
 // Do not edit below this line
 module.exports = Tamagotchi;
