@@ -28,7 +28,9 @@ class Food {
     }
 }
 
-const platano = new Food('Platanos', 4)
+// const platano = new Food('Platanos', 4)
+// const yogurt = new Food('yogurt', 0, false)
+// console.log(yogurt.isFresh())
 
 
 // Do not edit below this line
