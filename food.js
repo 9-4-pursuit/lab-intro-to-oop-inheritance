@@ -5,7 +5,18 @@ class Food {
     this.daysToSpoil = daysToSpoil;
     this.fresh = fresh;
   }
-  
+
+  prepare(){
+
+  }
+
+  isFresh(){
+
+  }
+
+  aDayPasses(){
+    
+  }
 }
 
 
