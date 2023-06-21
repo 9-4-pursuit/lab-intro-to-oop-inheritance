@@ -48,6 +48,13 @@ class Tamagotchi {
             this.energy--;
         }
     }
+
+    sleep() {
+        this.energy += 4;
+        this.full -= 3;
+    }
+
+
 }
 
 const hercules = new Tamagotchi('Hercules');
@@ -56,6 +63,8 @@ hercules.greet();
 hercules.status();
 hercules.eat();
 hercules.medicate();
+hercules.play();
+hercules.sleep();
 
 // Do not edit below this line
 module.exports = Tamagotchi;
