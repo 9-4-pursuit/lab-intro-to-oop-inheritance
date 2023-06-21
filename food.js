@@ -36,6 +36,10 @@ class BadFood extends Food {
     super(name, daysToSpoil, fresh);
     this.weapons = weapons;
   }
+
+  prepare() {
+    console.log(`I am ${this.name} and my calories are too high to count!` || `I am ${this.name} and you are just a passing trend!`);
+  }
 }
 
 // Do not edit below this line
