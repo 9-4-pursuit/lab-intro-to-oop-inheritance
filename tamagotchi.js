@@ -25,11 +25,19 @@ class Tamagotchi {
     }
   }
 
-  
+  medicate(){
+    if (this.sick){
+      this.sick = false;
+      this.full = 9;
+      this.energy -= 3;
+    } else {
+      console.log(`${this.name} refused to take medicine`)
+      this.energy--;
+    }
+  }
 }
 
-let tomo = new Tamagotchi("tomo");
+let tomo = new Tamagotchi("Tomo");
 
-tomo.eat()
 // Do not edit below this line
 module.exports = Tamagotchi;
