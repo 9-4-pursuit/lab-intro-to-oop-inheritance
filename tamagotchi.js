@@ -54,7 +54,6 @@ class Tamagotchi {
   }
 
 
-  
 }
 
 let tomo = new Tamagotchi("Tomo");
