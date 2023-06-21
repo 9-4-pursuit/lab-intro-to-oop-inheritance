@@ -54,7 +54,17 @@ class Tamagotchi {
         this.full -= 3;
     }
 
-
+    timePasses() {
+        if (this.sick) {
+            this.mood -= 3;
+            this.energy -= 2;
+            this.full -= 2;
+        } else {
+            this.mood -= 2;
+            this.energy--;
+            this.full--;
+        }
+    }
 }
 
 const hercules = new Tamagotchi('Hercules');
@@ -65,6 +75,7 @@ hercules.eat();
 hercules.medicate();
 hercules.play();
 hercules.sleep();
+hercules.timePasses();
 
 // Do not edit below this line
 module.exports = Tamagotchi;
