@@ -31,6 +31,14 @@ class Tamagotchi {
       "*******************"
     );
   }
+
+  eat() {
+    this.full += 2;
+    this.energy--;
+    if(this.full > 10) {
+        this.sick = true;
+    }
+  }
 }
 // Do not edit below this line
 module.exports = Tamagotchi;
