@@ -31,6 +31,30 @@ class Tamagotchi {
             this.energy -= 1;
         }
     }
+    play() {
+        if (this.sick = true) {
+            this.mood -= 1;
+            this.energy -= 1;
+            console.log(`${this.name} is too sick to play and is now grumpier and tireder.`);
+        } else if (this.mood > 9) {
+            this.energy -= 2;
+            this.full -= 1;
+            console.log(`${this.name} will not play; its mood is too high!  Runs around some though.`);
+        } else if (this.energy <= 3) {
+            this.energy -= 1;
+            console.log("I am too tired to play");
+        } else {
+            this.mood += 2;
+            this.energy -= 1;
+            this.full -= 1;
+        }
+    }
+    sleep() {
+        this.energy += 4;
+        this.full -= 3;
+        console.log(`Up and at 'em!  ${this.name} has awoken refreshed and hungry!`)
+    }
+    //name, energy = 9, full = 8, mood = 6, sick = false, rehomed = false
 }
 const hamzilla = new Tamagotchi("Hamzilla");
 hamzilla.greet();
