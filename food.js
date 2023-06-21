@@ -43,24 +43,48 @@ class BadFood extends Food{
     console.log(taunts[Math.floor(Math.random() * taunts.length)])
   }
 
+  fight(enemyFood){
+    let attack = this.weapons[Math.floor(Math.random() * this.weapons.length)]
 
-
+    console.log(`I used ${attack.name}.\n${enemyFood.name} is down to ${enemyFood.daysToSpoil -= attack.hitPoints}, but I still have ${this.daysToSpoil}.`)
+  }
 }
 
-attacks = [
-  {
-    name: "Mouth Burn",
-    hitPoints: 3,
-  },
-  {
-    name: "Hot Pepper Storm",
-    hitPoints: 4,
-  },
-  {
-    name: "Cheese Grease",
-    hitPoints: 5,
-  },
-];
+// let pizzaAttacks = [
+//   {
+//     name: "Mouth Burn",
+//     hitPoints: 3,
+//   },
+//   {
+//     name: "Hot Pepper Storm",
+//     hitPoints: 4,
+//   },
+//   {
+//     name: "Cheese Grease",
+//     hitPoints: 5,
+//   },
+// ];
+
+// let donutAttacks = [
+//   {
+//     name: "Sprinkle Spray",
+//     hitPoints: 3,
+//   },
+//   {
+//     name: "Icing Deluge",
+//     hitPoints: 4,
+//   },
+//   {
+//     name: "Sugar Shock",
+//     hitPoints: 5,
+//   },
+// ];
+
+// let pizza = new BadFood("Pizza", pizzaAttacks);
+// let donut = new BadFood("Donut", donutAttacks);
+
+// pizza.fight(donut)
+// donut.fight(pizza)
 
 // Do not edit below this line
 module.exports = Food;
