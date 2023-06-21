@@ -54,6 +54,23 @@ class Tamagotchi {
         this.full -= 3;
         console.log(`Up and at 'em!  ${this.name} has awoken refreshed and hungry!`)
     }
+    timePasses() {
+        if (this.sick = false) {
+            this.mood -= 2;
+            this.full -= 1;
+            this.energy -= 1;
+        } else {
+            this.mood -= 3;
+            this.full -= 2;
+            this.energy -= 2;
+        }
+    }
+    badGuardian() {
+        if (this.energy <= 0 || this.mood <= 0 || this.full <= 0) {
+            this.rehomed = true;
+        }
+        console.log(`${this.name} has been rehomed!`)
+    }
     //name, energy = 9, full = 8, mood = 6, sick = false, rehomed = false
 }
 const hamzilla = new Tamagotchi("Hamzilla");
