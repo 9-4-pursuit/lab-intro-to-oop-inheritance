@@ -4,7 +4,8 @@ class Food {
     constructor(name, daysToSpoil, fresh = true) {
         this.name = name;
         this.daysToSpoil = daysToSpoil;
-        this.fresh = fresh
+        this.fresh = fresh 
+        // || daysToSpoil > 0 ? true : false;
     }
 
     prepare() {
@@ -17,7 +18,7 @@ class Food {
             console.log(`There are ${this.daysToSpoil} days left before ${this.name} spoils.`);
         } else if (this.daysToSpoil === 1) {
             console.log(`There is 1 day left before ${this.name} spoils.`);
-        } else if (this.daysToSpoil === 0) {
+        } else {
             console.log(`${this.name} has spoiled.`);
         }
     }
@@ -35,11 +36,11 @@ class Food {
       }
     }
     
-    const icecream = new Food("icecream", 3, true);
+    const banana = new Food("banana", 3, true);
     
-    icecream.prepare();
-    icecream.isFresh();
-    icecream.simulateSpoiling(); 
+    // icecream.prepare();
+    // icecream.isFresh();
+    // icecream.simulateSpoiling(); 
 
 
 // Do not edit below this line

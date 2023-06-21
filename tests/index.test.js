@@ -1,11 +1,11 @@
-const Tamagotchi = require("../tamagotchi.js");
+// const Tamagotchi = require("../tamagotchi.js");
 const Food = require("../food.js");
 
 let banana, fizz;
 
 beforeAll(() => {
   banana = new Food("Banana", 3);
-  fizz = new Tamagotchi("Fizz");
+  // fizz = new Tamagotchi("Fizz");
 });
 
 describe("Food class", () => {
@@ -54,11 +54,11 @@ describe("Food class", () => {
   });
 
   test("isFresh logs days left when food is fresh", () => {
-    const grossBanana = new Food("eeewww what an old banana", -1);
+    const grossBanana = new Food("banana", -1);
     console.log = jest.fn();
     grossBanana.isFresh();
     expect(console.log).toHaveBeenCalledWith(
-      "eeewww what an old banana has spoiled."
+      "banana has spoiled."
     );
   });
 
