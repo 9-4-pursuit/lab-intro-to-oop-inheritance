@@ -75,6 +75,11 @@ class Tamagotchi {
       this.updateEnergy(this.energy - 1);
     }
   }
+
+  sleep() {
+    this.updateFull(this.full - 3);
+    this.updateEnergy(this.energy + 4);
+  }
 }
 
 // Do not edit below this line
