@@ -46,6 +46,10 @@ class Tamagotchi {
         } else if (this.energy < 4) {
             console.log('I am too tired to play');
             this.energy--;
+        } else {
+            this.mood += 2;
+            this.energy--;
+            this.full--;
         }
     }
 
@@ -82,6 +86,7 @@ hercules.play();
 hercules.sleep();
 hercules.timePasses();
 hercules.badGuardian();
+hercules.status();
 
 // Do not edit below this line
 module.exports = Tamagotchi;
