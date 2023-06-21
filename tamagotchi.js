@@ -70,7 +70,12 @@ class Tamagotchi {
     }
   }
 
-  
+  badGuardian(){
+    if (this.energy <= 0 || this.mood <= 0 || this.full <= 0){
+      console.log(`${this.name} has been rehomed`)
+      this.rehomed = true;
+    }
+  }
 
 }
 
