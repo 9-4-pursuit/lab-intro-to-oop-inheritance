@@ -8,6 +8,13 @@ class Tamagotchi {
         this.sick = sick;
         this.rehomed = rehomed;
     }
+    greet() {
+        console.log(`Hello, I'm ${this.name}!`);
+    }
+    status() {
+        const star = '*';
+        console.log(`${star.repeat(20)}\nMy mood is: ${this.mood}\nI am this full: ${this.full}\nMy energy is: ${this.energy}\nI am ${this.sick ? "sick" : "not sick"}\n${star.repeat(20)}`)
+    }
 }
 // Do not edit below this line
 module.exports = Tamagotchi;
