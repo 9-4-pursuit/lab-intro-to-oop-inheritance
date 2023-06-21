@@ -23,16 +23,17 @@ class Tamagotchi {
         }
     }
     medicate() {
-        if (this.sick = true) {
+        if (this.sick === true) {
             this.full = 9;
             this.energy -= 3;
+            this.sick = false;
         } else {
             console.log(`${this.name} does not think it needs medicine!`);
             this.energy -= 1;
         }
     }
     play() {
-        if (this.sick = true) {
+        if (this.sick === true) {
             this.mood -= 1;
             this.energy -= 1;
             console.log(`${this.name} is too sick to play and is now grumpier and tireder.`);
@@ -55,7 +56,7 @@ class Tamagotchi {
         console.log(`Up and at 'em!  ${this.name} has awoken refreshed and hungry!`)
     }
     timePasses() {
-        if (this.sick = false) {
+        if (this.sick === false) {
             this.mood -= 2;
             this.full -= 1;
             this.energy -= 1;
@@ -74,7 +75,7 @@ class Tamagotchi {
     //name, energy = 9, full = 8, mood = 6, sick = false, rehomed = false
 }
 const hamzilla = new Tamagotchi("Hamzilla");
-hamzilla.greet();
-hamzilla.status();
+hamzilla.medicate();
+console.log(hamzilla);
 // Do not edit below this line
 module.exports = Tamagotchi;
