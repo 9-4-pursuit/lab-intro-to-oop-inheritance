@@ -80,6 +80,18 @@ class Tamagotchi {
     this.updateFull(this.full - 3);
     this.updateEnergy(this.energy + 4);
   }
+
+  timePasses() {
+    if (this.sick) {
+      this.updateMood(this.mood - 3);
+      this.updateFull(this.full - 2);
+      this.updateEnergy(this.energy - 2);
+    } else {
+      this.updateMood(this.mood - 2);
+      this.updateFull(this.full - 1);
+      this.updateEnergy(this.energy - 1);
+    }
+  }
 }
 
 // Do not edit below this line
