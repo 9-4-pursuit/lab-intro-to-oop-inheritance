@@ -92,6 +92,13 @@ class Tamagotchi {
       this.updateEnergy(this.energy - 1);
     }
   }
+  
+  badGuardian() {
+    if (this.energy <= 0 || this.mood <= 0 || this.full <= 0) {
+      this.updateRehomed(true);
+      console.log("Your Tamagotchi got rehomed");
+    }
+  }
 }
 
 // Do not edit below this line
