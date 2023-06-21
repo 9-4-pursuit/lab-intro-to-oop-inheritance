@@ -47,6 +47,17 @@ class Tamagotchi {
     this.updateEnergy(this.energy - 1);
     if (this.full > 10) this.updateSick(true);
   }
+
+  medicate() {
+    if (this.sick) {
+      this.updateFull(9);
+      this.updateEnergy(this.energy - 3);
+      this.updateSick(false);
+    } else {
+      console.log("No need for medication");
+      this.updateEnergy(this.energy - 1);
+    }
+  }
 }
 
 // Do not edit below this line
