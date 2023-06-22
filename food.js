@@ -21,11 +21,11 @@ class Food {
     }
 }   
 
-const banana = new Food("banana", -1)
+// const banana = new Food("banana", -1)
 
-banana.prepare()
-banana.isFresh()
-banana.aDayPasses()
+// banana.prepare()
+// banana.isFresh()
+// banana.aDayPasses()
 
 // Do not edit below this line
 module.exports = Food;

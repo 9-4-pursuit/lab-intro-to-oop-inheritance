@@ -61,11 +61,29 @@ class Tamagotchi {
         this.full = this.full - 3
     }
 
+    timePasses(){
+        if(!this.sick){
+            this.mood = this.mood - 2
+            this.full = this.full - 1
+            this.energy = this.energy - 1
+        } else{
+            this.mood = this.mood - 3
+            this.full =this.full - 2
+            this.energy= this.energy - 2
+        }
+    }
+
+    badGuardian(){
+        console.log("The Tamagotchi has been rehomed");
+        if(this.energy <= 0 || this.mood <= 0 || this.full <=0){
+            this.rehomed = true
+        }
+    }
 }
 
-const tommy = new Tamagotchi()
-tommy.eat()
-console.log(tommy.full);
+// const tommy = new Tamagotchi()
+// tommy.eat()
+// console.log(tommy.full);
 
 
 // Do not edit below this line
