@@ -20,9 +20,28 @@ class Tamagotchi {
     }
 
     eat(){
+         this.full = ((this.full)+2); 
+        this.energy = this.energy - 1;
+        if(this.full > 10){
+            this.sick = true
+        }
+    }
 
+    medicate(){
+        if(this.sick === true){
+            this.full = 9;
+            this.energy = this.energy - 3
+            this.sick = false
+        } else {
+            console.log("refusal to take medicine");
+            this.energy = this.energy--
+        }
     }
 }
+
+const tommy = new Tamagotchi()
+tommy.eat()
+console.log(tommy.full);
 
 
 // Do not edit below this line
