@@ -34,9 +34,28 @@ class Tamagotchi {
             this.sick = false
         } else {
             console.log("refusal to take medicine");
-            this.energy = this.energy--
+            this.energy = this.energy -1
         }
     }
+
+    play(){
+        if(this.sick === true){
+            this.mood = this.mood - 1
+            this.energy = this.energy - 1
+        }
+        else if(this.energy <= 3){
+            console.log("I am too tired to play");
+            this.energy = this.energy - 1
+        }else if(this.mood > 9){
+            this.energy = this.energy - 2
+            this.full = this.full -1
+        }else if(!this.sick) {
+        this.mood = this.mood + 2
+        this.energy = this.energy - 1
+        this.full = this.full - 1
+        }
+    }
+
 }
 
 const tommy = new Tamagotchi()
