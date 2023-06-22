@@ -56,6 +56,11 @@ class Tamagotchi {
         }
     }
 
+    sleep(){
+        this.energy = this.energy + 4
+        this.full = this.full - 3
+    }
+
 }
 
 const tommy = new Tamagotchi()
