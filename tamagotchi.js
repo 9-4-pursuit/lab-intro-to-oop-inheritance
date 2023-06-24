@@ -8,8 +8,7 @@ class Tamagotchi {
         this.sick = sick;
         this.rehomed = rehomed;
     }
-
-
+    
 }
 
 
