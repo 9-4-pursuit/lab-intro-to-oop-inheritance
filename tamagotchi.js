@@ -41,6 +41,7 @@ class Tamagotchi {
         if(this.sick === true) {
             this.full = 9
             this.energy -= 3
+            this.sick = false
         }else {
             console.log('I dont want medicine')
             this.energy--
@@ -53,22 +54,57 @@ class Tamagotchi {
 
     }
     
-    timePases() {
+    timePasses() {
         if(this.sick === true) {
             this.mood -= 3
             this.full -= 2
             this.energy -= 2
         }else {
             this.mood -= 2
-            this.full -= 2
-            this.energy -= 2
+            this.full -= 1
+            this.energy -= 1
         }
+    }
+
+    play() {
+
+        if(this.sick === true){
+            this.mood--
+            this.energy--
+        }else if(this.mood > 9) {
+            this.energy -= 2
+            this.full--
+        }else if(this.energy <= 3) {
+            this.energy--
+            console.log('I am too tired to play')
+        }else {
+            this.mood += 2
+            this.energy--
+            this.full--
+
+        }
+
+    }
+
+    badGuardian() {
+        if (this.energy <= 0 || this.mood <= 0 || this.full <= 0){
+            this.rehomed = true
+            console.log('has been removed')
+        }
+    
     }
 }
 
-const pika = new Tamagotchi ('Pikachu')
-console.log(pika.timePases())
-console.log(pika)
+module.exports = Tamagotchi;
+
+// const pika = new Tamagotchi ('Pikachu')
+// const elias = new Tamagotchi ('Elias', 0, 4, 3, false, false) 
+// console.log(pika.timePases())
+// console.log(pika)
+// console.log(elias.badGuardian())
+// console.log(elias)
+
+
 
 
 
