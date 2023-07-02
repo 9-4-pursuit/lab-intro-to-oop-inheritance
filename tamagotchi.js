@@ -2,9 +2,9 @@
 class Tamagotchi {
   constructor(name, energy, full, mood) {
     this.name = name;
-    this.energy = energy;
-    this.full = full;
-    this.mood = mood;
+    this.energy = 9;
+    this.full = 8;
+    this.mood = 6;
     this.sick = false;
     this.rehomed = false;
   }
@@ -20,8 +20,9 @@ class Tamagotchi {
   }
   eat() {
     if (this.full < 8) {
-      this.full += 1;
+      this.full += 2;
       this.mood += 1;
+      this.energy -= 1
       console.log(`${this.name} is eating`);
     } else {
       console.log(`${this.name} is full`);
@@ -83,6 +84,8 @@ class Tamagotchi {
 }
 
 let tama = new Tamagotchi("tama", 10, 10, 10);
+console.log(tama);
+tama.eat();
 console.log(tama);
 
 // Do not edit below this line
