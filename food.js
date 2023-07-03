@@ -5,26 +5,25 @@ class Food{
         this.daysToSpoil = daysToSpoil;
         this.fresh = true;
     }
-    prepare(name){
+    prepare(){
         console.log(`${this.name} is being prepared`)
     }
-isFresh(name, daysToSpoil){
+isFresh(){
    
     if (this.daysToSpoil > 0){
-        console.log(`There are ${this.daysToSpoil} days left before ${this.name} spoils`)
-    } else if (daysToSpoil <= 0){
-        console.log(`${this.name} has spoiled`)
+        console.log(`There are ${this.daysToSpoil} days left before ${this.name} spoils.`)
+    } else if (this.daysToSpoil <= 0){
+        console.log(`${this.name} has spoiled.`)
     }
 }
-aDayPasses(name, daysToSpoil, isFresh){
-if (this.daysToSpoil > 0){
-    this.daysToSpoil--
-    console.log(name.isFresh())
+aDayPasses(){
+    this.daysToSpoil -= 1;
+    this.isFresh()
 }
 }
 
 
-}
+
 
 //instance
 const otherFood = new Food("Grape", 5)
