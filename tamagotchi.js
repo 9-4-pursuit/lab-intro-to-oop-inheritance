@@ -1,13 +1,15 @@
 // Create class below
 class Tamagotchi{
-    constructor(name, energy, full, mood, sick, rehomed){
+  
+    constructor(name){
         this.name = name
-        this.energy = energy
-        this.full = full
-        this.mood = mood
+        this.energy = 9
+        this.full = 8
+        this.mood = 6
         this.sick = false
         this.rehomed = false
     }
+
     greet(){
         console.log(`Hello, I'm ${this.name}!`)
     }
@@ -18,11 +20,12 @@ class Tamagotchi{
 
     eat(){
         if (this.full < 8){
-            this.full += 1
-            this.mood += 1
+            this.full += 2
+            this.energy -= 1
             console.log(`${this.name} is eating`)
-        } else {
-            console.log(`${this.name} is full`)
+        } else if(this.full > 10)  {
+            this.sick = true
+            console.log(`${this.name} is full and sick`)
         }
     }
 
@@ -48,6 +51,10 @@ class Tamagotchi{
         }else if (this.energy <=3) {
             console.log(`${this.name} is too tired to play`)
             this.energy -= 1
+        } else {
+            this.mood += 2
+            this.energy -= 1
+            this.full -= 1
         }
     }
 
@@ -75,12 +82,16 @@ class Tamagotchi{
 
         badGuardian() {
             console.log(`${this.name} has been rehomed.`)
-            if (this.energy <= 0 || this.full <= 0 || this.mood <= 0){
+            if (this.energy <= 0 || this.mood <= 0 || this.full <= 0){
                 this.rehomed = true
             }
         }
 }
 
+let bob = new Tamagotchi("bob", 10, 10, 10, false, false )
+console.log(bob)
+bob.eat()
+console.log(bob)
 
 // Do not edit below this line
 module.exports = Tamagotchi;
