@@ -16,7 +16,7 @@ class Food {
         `There are ${this.daysToSpoil} days left before ${this.name} spoils.`
       );
     } else {
-      console.log(`${this.name} has spoiled.`);
+      console.log(`${this.name} has spoiled`);
     }
   };
   aDayPasses = () => {
