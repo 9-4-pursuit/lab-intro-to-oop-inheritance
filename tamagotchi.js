@@ -50,8 +50,8 @@ class Tamagotchi {
       this.energy--;
     } else {
       this.mood += 2;
-      this.energy++;
-      this.full++;
+      this.energy--;
+      this.full--;
     }
   };
   sleep = () => {
