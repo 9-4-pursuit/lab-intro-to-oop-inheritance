@@ -64,6 +64,14 @@ class Tamagotchi {
       this.energy -= 1;
     }
   };
+  badGuardian = () => {
+    if (this.energy <= 0 || this.energy <= 0 || this.full <= 0) {
+      this.rehomed = true;
+    }
+    if (this.rehomed) {
+      console.log(`${this.name} has been rehomed/`);
+    }
+  };
 }
 // Do not edit below this line
 module.exports = Tamagotchi;
