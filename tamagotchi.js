@@ -25,6 +25,7 @@ class Tamagotchi {
   };
   eat = () => {
     this.full += 2;
+    this.energy--;
     this.full > 10 ? (this.sick = true) : this.sick;
   };
 
