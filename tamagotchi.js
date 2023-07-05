@@ -30,7 +30,7 @@ class Tamagotchi {
   };
 
   medicate = () => {
-    if (this.sick === true) {
+    if (this.sick) {
       this.full = 9;
       this.energy -= 3;
     } else {
@@ -39,9 +39,18 @@ class Tamagotchi {
     }
   };
   play = () => {
-    this.mood += 2;
-    this.energy--;
-    this.full--;
+    if (this.sick) {
+      this.mood--;
+      this.energy;
+    } else {
+      this.mood += 2;
+      this.energy--;
+      this.full--;
+    }
+  };
+  sleep = () => {
+    this.energy += 4;
+    this.full -= 3;
   };
 }
 // Do not edit below this line
