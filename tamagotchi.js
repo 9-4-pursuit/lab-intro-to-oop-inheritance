@@ -19,11 +19,11 @@ class Tamagotchi{
     }
 
     eat(){
-        if (this.full < 8){
-            this.full += 2
+        this.full += 2
+        if (this.full <= 8){
             this.energy -= 1
             console.log(`${this.name} is eating`)
-        } else if(this.full > 10)  {
+        } else if (this.full > 10)  {
             this.sick = true
             console.log(`${this.name} is full and sick`)
         }
@@ -33,6 +33,7 @@ class Tamagotchi{
         if (this.sick === true){
             this.full = 9;
             this.energy -= 3
+            this.sick = false
         }else{
             console.log(`${this.name}, refused to take medicine.`)
             this.energy -= 1
