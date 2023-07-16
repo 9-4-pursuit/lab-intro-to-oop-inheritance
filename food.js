@@ -23,8 +23,15 @@ class Food {
 
     aDayPasses() {
         this.daysToSpoil -= 1;
+        return this.isFresh()
     }
 }
+
+let newFood = new Food("Apple", 4, true)
+newFood.prepare()
+newFood.isFresh()
+newFood.aDayPasses()
+
 
 // Do not edit below this line
 module.exports = Food;
