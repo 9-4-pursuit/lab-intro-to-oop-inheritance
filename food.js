@@ -11,12 +11,18 @@ class Food {
   }
 
   isFresh() {
-
+    if (this.daysToSpoil > 1 && this.fresh) {
+      console.log(`There are ${this.daysToSpoil} days left before ${this.name} spoils.`);
+    } else if (this.daysToSpoil === 1 && this.fresh) {
+      console.log(`There is ${this.daysToSpoil} day left before ${this.name} spoils.`);
+    } else {
+      console.log(`${this.name} has spoiled.`);
+    }
   }
 
   aDayPasses() {
     this.daysToSpoil -= 1;
-    //this.isFresh();
+    this.isFresh();
   }
 }
 
