@@ -22,9 +22,11 @@ class Food {
     }
 
     aDayPasses() {
-        this.daysToSpoil - 1; // --
+        this.daysToSpoil--; // --
 
-        this.isFresh(); //might need to incorporate this. if no work 
+        //isFresh();
+
+        //this.isFresh(); //might need to incorporate this. if no work 
     }
 }
 
