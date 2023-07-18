@@ -17,10 +17,60 @@ class Tamagotchi {
         return console.log(`📊 Status 📊\n--------------\nMy mood is: ${this.mood}\nI am this full: ${this.full}\nMy energy is: ${this.energy}\n${this.sick ? `I am sick` : `I am not sick`}\n--------------`)
     }
 
+    eat(){
+        this.full += 2;
+        this.energy -=1;
+        if(this.full >= 10 ) {
+            this.sick = true;
+        }
+    }
+
+    medicate() {
+        if(this.sick) {
+            this.full = 9;
+            this.energy -= 3;
+        }
+    }
+
+    play() {
+        if(this.sick) {
+            this.mood -= 1;
+            this.energy -= 1;
+        } 
+        else if (this.energy <= 3) {
+            this.energy -= 1
+            console.log("I am too tired to play")
+        } 
+        else if (this.mood > 9) {
+            this.energy -= 2;
+            this.full -= 1;
+        } 
+        else {
+            this.mood += 2
+            this.energy -+ 1
+        }
+    }
+
+    sleep() {
+        this.energy += 4;
+        this.full -= 3;
+    }
+
+    timePasses() {
+        if (!this.sick) {
+            this.mood -= 2
+            this.full -= 1
+            this.energy -= 1
+        }
+    }
+
+    
+
 }
 
 let Oliver = new Tamagotchi('Oliver')
-Oliver.greet()
+
+
 Oliver.status()
 
 // Do not edit below this line
