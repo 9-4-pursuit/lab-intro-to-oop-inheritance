@@ -8,14 +8,14 @@ class Food {
     }
 
     prepare() {
-        return console.log(`${this.name} is being prepared`);
+         console.log(`${this.name} is being prepared`);
     }
 
     isFresh() {
-        if (this.fresh) {
-            return console.log(`There are ${this.daysToSpoil} left before ${this.name} spoils.`)
-        } else {
-            return console.log(`${this.daysToSpoil} or less days left, Item has spoiled.`)
+        if (this.daysToSpoil >= 3) {
+        console.log(`There are ${this.daysToSpoil} days left before ${this.name} spoils.`)
+        } else  {
+        console.log(`${this.name} has spoiled.`)
         }
 
         
@@ -23,7 +23,7 @@ class Food {
 
     aDayPasses() {
         this.daysToSpoil -= 1;
-        return this.isFresh()
+        this.isFresh()
     }
 }
 

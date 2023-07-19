@@ -27,9 +27,15 @@ class Tamagotchi {
 
     medicate() {
         if(this.sick) {
+            this.sick = false
             this.full = 9;
             this.energy -= 3;
         }
+    }
+
+    isFresh() {
+
+        console.log(this.isFresh)
     }
 
     play() {
@@ -64,8 +70,28 @@ class Tamagotchi {
         }
     }
 
+    badGuardian() {
     
+        if(this.energy <= 0){
+            this.rehomed = true
+        }
 
+        if(this.mood <= 0) {
+            this.rehomed = true
+        }
+
+        if (this.full <= true) {
+            this.rehomed = true
+        }
+    }
+
+    eat() {
+        this.full += 2;
+        this.energy -= 1;
+        if( this.full > 10) {
+            this.sick = true
+        }
+    }
 }
 
 let Oliver = new Tamagotchi('Oliver')
