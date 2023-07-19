@@ -30,6 +30,8 @@ class Tamagotchi {
             this.sick = false
             this.full = 9;
             this.energy -= 3;
+        } else {
+            this.energy -= 1;
         }
     }
 
@@ -52,14 +54,16 @@ class Tamagotchi {
             this.full -= 1;
         } 
         else {
-            this.mood += 2
-            this.energy -+ 1
+            this.mood += 2;
+            this.energy -= 1;
+            this.full -= 1;
         }
     }
 
     sleep() {
-        this.energy += 4;
-        this.full -= 3;
+
+           this.energy += 4;
+           this.full -= 3;
     }
 
     timePasses() {
@@ -67,6 +71,10 @@ class Tamagotchi {
             this.mood -= 2
             this.full -= 1
             this.energy -= 1
+        } else {
+            this.mood -= 3;
+            this.full -= 2
+            this.energy -=2
         }
     }
 
